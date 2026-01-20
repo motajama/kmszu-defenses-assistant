@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMSŽU – asistence obhajob</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__left">
+        <div class="pill" id="clock">--:--:--</div>
+        <div class="pill" id="order">0 / 0</div>
+        <div class="pill" id="currentStudent">Aktuální: —</div>
+        <div class="pill" id="nextStudent">Následující: —</div>
+        <div class="pill" id="currentPhase">Fáze: —</div>
+      </div>
+      <div class="topbar__right">
+        <div class="pill" id="predictedEnd">Vyhlášení: —</div>
+        <button class="btn" id="btnNew">Nový den</button>
+        <button class="btn" id="btnImport">Import rozpisu</button>
+        <button class="btn" id="btnOpen">Načíst</button>
+        <button class="btn" id="btnSave">Uložit</button>
+        <button class="btn" id="btnSaveAs">Uložit jako</button>
+        <button class="btn" id="btnCsv">Export CSV</button>
+        <button class="btn" id="btnTxt">Export TXT</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="sidebar__header">
+          <h2>Studující</h2>
+        </div>
+        <div id="studentList" class="studentList"></div>
+      </aside>
+
+      <section class="content">
+        <div id="studentCard" class="card"></div>
+      </section>
+    </main>
+
+    <!-- Import modal -->
+    <dialog id="importDialog" class="dialog">
+      <form method="dialog" class="dialog__form">
+        <h3>Importovat rozpis (paste text)</h3>
+        <textarea id="importText" rows="16" placeholder="Vlož sem text z IS (vstup pro komisi)…"></textarea>
+        <div class="dialog__actions">
+          <button class="btn" value="cancel">Zavřít</button>
+          <button class="btn primary" id="btnParseImport" value="ok">Importovat</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+

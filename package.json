@@ -1,0 +1,13 @@
+{
+  "name": "kmszu-defenses-assistant",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "electron ."
+  },
+  "dependencies": {
+    "electron": "^32.0.0"
+  }
+}
+
