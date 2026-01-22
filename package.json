@@ -1,13 +1,24 @@
 {
   "name": "kmszu-defenses-assistant",
   "version": "1.0.0",
+  "description": "Electron tool for KMSZU defenses assistant",
+  "author": "Jan Motal",
   "main": "main.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "electron ."
+    "dev": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "pack:mac": "electron-builder --mac --dir"
   },
-  "dependencies": {
-    "electron": "^32.0.0"
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^26.4.0"
+  },
+  "build": {
+    "mac": {
+      "target": ["dmg", "zip"]
+    }
   }
 }
 
